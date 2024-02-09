@@ -1,4 +1,4 @@
-# ex 1
+    # ex 1
 fruits = ["apple", "banana", "cherry"]
 print("fruits[1]")
 
