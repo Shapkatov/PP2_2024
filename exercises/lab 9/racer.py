@@ -28,7 +28,7 @@ font = pygame.font.SysFont("Verdana", 60)
 font_small = pygame.font.SysFont("Verdana", 20)
 game_over = font.render("Game Over", True, BLACK)
 
-background = pygame.image.load(r'C:\Users\alser\Desktop\repositories\work\lab9\AnimatedStreet.png') #загружаем фон
+background = pygame.image.load(r'C:\Users\Хамид Шапкатов\Desktop\PP2\exercises\lab 9\AnimatedStreet.png') #загружаем фон
 
 #Создание белого экрана
 DISPLAYSURF = pygame.display.set_mode((400,600))
@@ -40,7 +40,7 @@ pygame.display.set_caption("Racer")
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__() 
-        self.image = pygame.image.load(r'C:\Users\alser\Desktop\repositories\work\lab9\Enemy.png')
+        self.image = pygame.image.load(r'C:\Users\Хамид Шапкатов\Desktop\PP2\exercises\lab 9\Enemy.png')
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
@@ -55,7 +55,7 @@ class Enemy(pygame.sprite.Sprite):
 class Monet(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__() 
-        self.image = pygame.image.load(r'C:\Users\alser\Desktop\repositories\work\lab9\Monet1.png')
+        self.image = pygame.image.load(r'C:\Users\Хамид Шапкатов\Desktop\PP2\exercises\lab 9\Monet1.png')
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40,SCREEN_WIDTH-40), 0)
     def move(self):
@@ -69,9 +69,9 @@ class Monet(pygame.sprite.Sprite):
         self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
         global POINT
         if (POINT+1) % 5 ==0 and POINT!=0:
-            self.image = pygame.image.load(r'C:\Users\alser\Desktop\repositories\work\lab9\Monet2.png')
+            self.image = pygame.image.load(r'C:\Users\Хамид Шапкатов\Desktop\PP2\exercises\lab 9\Monet2.png')
         else:
-            self.image = pygame.image.load(r'C:\Users\alser\Desktop\repositories\work\lab9\Monet1.png')
+            self.image = pygame.image.load(r'C:\Users\Хамид Шапкатов\Desktop\PP2\exercises\lab 9\Monet1.png')
 
         if POINT % 5 ==0 and POINT!=0:
             POINT+=3
@@ -81,7 +81,7 @@ class Monet(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__() 
-        self.image = pygame.image.load(r'C:\Users\alser\Desktop\repositories\work\lab9\Player.png')
+        self.image = pygame.image.load(r'C:\Users\Хамид Шапкатов\Desktop\PP2\exercises\lab 9\Player.png')
         self.rect = self.image.get_rect()
         self.rect.center = (160, 520)
        
@@ -139,7 +139,7 @@ while True:
     
     #To be run if collision occurs between Player and Enemy
     if pygame.sprite.spritecollideany(P1, enemies):
-          pygame.mixer.Sound(r'C:\Users\alser\Desktop\repositories\work\lab9\crash.wav').play()
+          pygame.mixer.Sound(r'C:\Users\Хамид Шапкатов\Desktop\PP2\exercises\lab 9\crash.wav').play()
           time.sleep(1)
                    
           DISPLAYSURF.fill(RED)
