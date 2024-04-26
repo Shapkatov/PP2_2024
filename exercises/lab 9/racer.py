@@ -19,7 +19,7 @@ WHITE = (255, 255, 255)
 
 #Другие переменные для использования в программе
 SCREEN_WIDTH = 400
-SCREEN_HEIGHT = 600
+SCREEN_HEIGHT = 700
 SPEED = 5
 SCORE = 0
 POINT = 0
@@ -113,7 +113,7 @@ all_sprites.add(M1)
 
 #Adding a new User event 
 INC_SPEED = pygame.USEREVENT + 1
-pygame.time.set_timer(INC_SPEED, 1000)
+pygame.time.set_timer(INC_SPEED, 1500)
 
 #Game Loop
 while True:

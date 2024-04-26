@@ -15,7 +15,7 @@ commands = {
 }
 # функция для установки панели с кнопочек
 def setsurf():
-    surf.fill('black')
+    surf.fill('blue')
     buttons.fill('white')
     pygame.draw.rect(buttons, 'black', (2, 2, 96, 206), 1) #координаты, размеры, граница с экраном
     pygame.draw.aaline(buttons, 'black', (8, 8), (40, 40), 1)

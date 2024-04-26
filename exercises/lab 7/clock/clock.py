@@ -3,9 +3,9 @@ pygame.init()
 
 size = (800, 600)
 screen = pygame.display.set_mode(size)
-back = pygame.image.load("lab7/clock/back.jpg")
-seconds = pygame.image.load("lab7/clock/seconds.png")
-minutes = pygame.image.load("lab7/clock/minutes.png")
+back = pygame.image.load("PP2/exercises/lab 7/clock/back.jpg")
+seconds = pygame.image.load("PP2/exercises/lab 7/clock/seconds.png")
+minutes = pygame.image.load("PP2/exercises/lab 7/clock/minutes.png")
 
 done = True
 while done:
@@ -17,7 +17,7 @@ while done:
 
     now = time.localtime()
 
-    minute_angle = 360 - (now.tm_min * 6)
+    minute_angle = 360 - (now.tm_min * 6 )
     min_rotate = pygame.transform.rotate(minutes, minute_angle)
     min_pos = ((size[0] - min_rotate.get_width())/2, (size[1] - min_rotate.get_width())/2)
     screen.blit(min_rotate, min_pos)

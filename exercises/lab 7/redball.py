@@ -12,10 +12,10 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 
 # размеры и начальное положение мяча
-BALL_SIZE = 50
-BALL_RADIUS = BALL_SIZE // 2
-ball_x = (SCREEN_WIDTH - BALL_SIZE) // 2
-ball_y = (SCREEN_HEIGHT - BALL_SIZE) // 2
+BALL_SIZE = 100
+BALL_RADIUS = BALL_SIZE // 3
+ball_x = (SCREEN_WIDTH - BALL_SIZE) // 3
+ball_y = (SCREEN_HEIGHT - BALL_SIZE) // 3
 
 BALL_SPEED = 20
 
