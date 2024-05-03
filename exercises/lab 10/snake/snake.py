@@ -13,7 +13,7 @@ YELLOW =(255, 191, 0)
 
 #clock
 clock = pygame.time.Clock()
-FPS = 10
+FPS = 20
 time_for_big_food = 10*FPS+1  # my time it is just cnt by FPS  10*FPS=10s
 
 #screen
@@ -102,7 +102,7 @@ conn = psycopg2.connect(
 cursor = conn.cursor()
 conn.autocommit = True
 
-login_name = str(input('Pls enter your login: '))
+login_name = str(input('enter your login: '))
 sql = f"select * from snakedata where user_login =\'{login_name}\'"
 cursor.execute(sql)
 info = cursor.fetchall()

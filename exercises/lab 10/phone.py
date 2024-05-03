@@ -13,17 +13,19 @@ conn.autocommit = True
 # Создание объекта-курсора
 cursor = conn.cursor()
 
-# Создание таблицы PhoneBook
-sql = '''CREATE TABLE PhoneBook(
-   id SERIAL PRIMARY KEY,
-   first_name VARCHAR(255) NOT NULL,
-   last_name VARCHAR(255),
-   phone_num VARCHAR(15) NOT NULL UNIQUE
-)'''
+# Запрос для получения данных из таблицы PhoneBook
+sql = '''SELECT * FROM PhoneBook;'''
 
 # Выполнение запроса
 cursor.execute(sql)
-print("Таблица PhoneBook успешно создана!")
+
+# Получение результатов
+phonebook_data = cursor.fetchall()
+
+# Вывод данных
+print("Содержимое таблицы PhoneBook:")
+for row in phonebook_data:
+    print(row)
 
 # Закрытие соединения
 conn.close()

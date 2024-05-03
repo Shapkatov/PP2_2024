@@ -12,9 +12,10 @@ cursor = conn.cursor()
 conn.autocommit = True
 
 
+
 #looking with the first and last name
-first_old = str(input("First_old: "))
-last_old = str(input("Last_old: "))
+first_old = str(input("First_name: "))
+last_old = str(input("Last_name: "))
 
 sql = f"select * from phonebook where first_name =\'{first_old}\' and last_name = \'{last_old}\' "
 cursor.execute(sql)

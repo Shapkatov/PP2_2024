@@ -13,9 +13,9 @@ cursor = conn.cursor()
 conn.autocommit = True
 
 #looking with the first and last name
-first_old = str(input("First_old: "))
-last_old = str(input("Last_old: "))
-num_old = int(input("Num_old: "))
+first_old = str(input("First_name: "))
+last_old = str(input("Last_name: "))
+num_old = int(input("Num_: "))
 sql = f"select * from phonebook where first_name =\'{first_old}\' and last_name = \'{last_old}\' and phone_num = \'{num_old}\' "
 cursor.execute(sql)
 info = cursor.fetchall()

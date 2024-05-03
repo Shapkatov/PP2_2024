@@ -1,31 +1,37 @@
-#Querying data from the tables (with different filters)
 import psycopg2
 
-conn = psycopg2.connect(
-	database="postgres",
-	user='postgres',
-	password='Daldalushel500@',
-	host='localhost',
-	#port='5432'
-)
-cursor = conn.cursor()
-conn.autocommit = True
+try:
+    # Подключение к базе данных
+    conn = psycopg2.connect(
+        database="postgres",
+        user='postgres',
+        password='Daldalushel500@',
+        host='localhost',
+        #port='5432'
+    )
+    
+    # Создание объекта курсора
+    cursor = conn.cursor()
+    
+    # Установка автоподтверждения для выполнения запросов
+    conn.autocommit = True
+    
+    # SQL-запрос
+    sql = "SELECT * FROM phonebook WHERE first_name = 'Sheikh'"
+    
+    # Выполнение запроса
+    cursor.execute(sql)
+    
+    # Извлечение данных
+    info = cursor.fetchall()
+    
+    # Вывод результатов
+    print(info)
+    
+except (psycopg2.DatabaseError, Exception) as error:
+    print("Ошибка:", error)
 
-#select all
-#sql = f"select * from phonebook";
-
-#select filter 
-sql = f"select * from phonebook where first_name = \'timon\' ";
-
-
-#select with sort filter decrease by first
-#sql = f"select * from phonebook by order by first_name desc";
-
-
-#select with sort filter increase by first
-#sql = f"select * from phonebook by order by first_name asc";
-
-
-cursor.execute(sql)
-info = cursor.fetchall()
-print(info)
+finally:
+    # Закрытие соединения
+    if conn is not None:
+        conn.close()
